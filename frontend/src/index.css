@@ -407,3 +407,7 @@ a.action_container:link {
 .spinner {
   margin: 100px 0px;
 }
+
+.spinner{
+  margin: 10% 0;
+}

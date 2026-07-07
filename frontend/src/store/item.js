@@ -4,10 +4,10 @@ import { DEFAULT_ITEMS } from "../data/items"
 
 const ItemSlice = createSlice({
   name: 'item',
-  initialState: DEFAULT_ITEMS,
+  initialState: [],
   reducers: {
-    addInitialItems: (state) => {
-      return state;
+    addInitialItems: (state,action) => {
+      return action.payload;
     }
   }
 })
