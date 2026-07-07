@@ -6,17 +6,17 @@ import Header from "../components/Header";
 const Bag = () => {
   return (
 
-      <main>
-        <div className="bag-page">
+    <main>
+      <div className="bag-page">
         <div className="bag-items-container">
-          <BagItemContainer/>
-          </div>
-        <div className="bag-summary">
-          <BagSummary/>
-          </div>
-
+          <BagItemContainer />
         </div>
-      </main>
+        <div className="bag-summary">
+          <BagSummary />
+        </div>
+
+      </div>
+    </main>
 
   )
 }

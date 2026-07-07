@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-// import { ItemActions } from "../store/item";
+// import BagItemContainer from "../components/BagItemContainer";
 import HomeItem from "../components/HomeItem";
 
 const Home = () => {
@@ -9,7 +9,7 @@ const Home = () => {
     <main>
       <div className="items-container">
         {items.map((item) => (
-          <HomeItem key={item.id} item={item} />
+          <HomeItem key={item.id} item={item}  />
         ))}
       </div>
     </main >

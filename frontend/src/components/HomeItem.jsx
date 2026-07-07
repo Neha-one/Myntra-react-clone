@@ -1,6 +1,10 @@
 import { useSelector } from "react-redux";
 
 const HomeItem = ({ item }) => {
+
+  const handlebagAdd = () => {
+    console.log("bad added")
+  }
   return (
     <div className="item-container">
       <img className="item-image" src={item.image} alt="item image" />
@@ -14,7 +18,7 @@ const HomeItem = ({ item }) => {
         <span className="original-price">Rs {item.original_price}</span>
         <span className="discount">({item.discount_percentage}% OFF)</span>
       </div>
-      <button className="btn-add-bag" onClick={()=>console.log("bad added")}>Add to Bag</button>
+      <button className="btn-add-bag" onClick={handlebagAdd}>Add to Bag</button>
     </div>
   )
 }
