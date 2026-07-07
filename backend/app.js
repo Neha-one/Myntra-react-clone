@@ -1,10 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-const { getStoredItems, storeItems } = require('../frontend/src/data/items');
+const { getStoredItems, storeItems } = require('./data/items');
 
 const app = express();
-
 
 app.use(bodyParser.json());
 
