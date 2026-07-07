@@ -2,7 +2,6 @@ import { useSelector } from "react-redux";
 
 const BagSummary = ({ finalbagItems }) => {
   const bagitemId = useSelector((store) => store.bag);
-  // useDispatch()
 
   let totalItem = bagitemId.length;
   let Convenience_Fee = 99;

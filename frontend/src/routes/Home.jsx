@@ -1,5 +1,4 @@
 import { useSelector } from "react-redux";
-// import BagItemContainer from "../components/BagItemContainer";
 import HomeItem from "../components/HomeItem";
 
 const Home = () => {

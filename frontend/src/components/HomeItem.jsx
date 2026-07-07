@@ -10,7 +10,6 @@ const HomeItem = ({ item }) => {
   const elementFound = bagItems.indexOf(item.id) >= 0;
 
   const handlebagAdd = () => {
-    console.log("bad added")
     dispatch(bagSliceActions.addtoBag(item.id));
   }
   const removefromBag = () => {
