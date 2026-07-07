@@ -1,26 +1,14 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { bagSliceActions } from "../store/bagSlice";
-const BagItemContainer = () => {
-  // const item = useSelector((store) => store.bag);
-  // // console.log(item);
 
-  // const dispatch = useDispatch()
-  // useEffect(() => {
-  //   dispatch(bagSliceActions.addbag(item[0]))
-  // }, [dispatch,item])
+const BagItemContainer = ({ item }) => {
 
-  const item = {
-    "id": "004",
-    "image": "images/4.jpg",
-    "company": "ADIDAS",
-    "item_name": "Indian Cricket ODI Jersey",
-    "original_price": 999,
-    "current_price": 999,
-    "discount_percentage": 0,
-    "return_period": 14,
-    "delivery_date": "10 Oct 2023",
-    "rating": { "stars": 5, "count": 10 }
+  const bagitems = useSelector((store) => store.bag)
+  const dispatch = useDispatch()
+
+  const handleremove = () => {
+    dispatch(bagSliceActions.removefromBag(item.id))
   }
   return (
     <div className="bag-item-container">
@@ -44,7 +32,7 @@ const BagItemContainer = () => {
         </div>
       </div>
 
-      <div className="remove-from-cart" onClick={() => console.log("item removed!")}>X</div>
+      <div className="remove-from-cart" onClick={handleremove}>X</div>
     </div>
   )
 }

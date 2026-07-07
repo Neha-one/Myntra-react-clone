@@ -1,9 +1,21 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { bagSliceActions } from "../store/bagSlice";
+import { IoIosAddCircleOutline } from "react-icons/io";
+import { MdDelete } from "react-icons/md";
 
 const HomeItem = ({ item }) => {
 
+  const dispatch = useDispatch();
+  const bagItems = useSelector((store) => store.bag);
+  const elementFound = bagItems.indexOf(item.id) >= 0;
+
   const handlebagAdd = () => {
     console.log("bad added")
+    dispatch(bagSliceActions.addtoBag(item.id));
+  }
+  const removefromBag = () => {
+    dispatch(bagSliceActions.removefromBag(item.id))
+
   }
   return (
     <div className="item-container">
@@ -18,7 +30,11 @@ const HomeItem = ({ item }) => {
         <span className="original-price">Rs {item.original_price}</span>
         <span className="discount">({item.discount_percentage}% OFF)</span>
       </div>
-      <button className="btn-add-bag" onClick={handlebagAdd}>Add to Bag</button>
+      {elementFound ?
+        <button type="button" className="btn btn-add-bag btn-danger d-flex align-items-center justify-content-center gap-2" onClick={removefromBag}><MdDelete />Remove</button>
+        :
+        <button type="button" className="btn btn-add-bag btn-success d-flex align-items-center justify-content-center gap-2" onClick={handlebagAdd}> <IoIosAddCircleOutline />Add to Bag</button>
+      }
     </div>
   )
 }

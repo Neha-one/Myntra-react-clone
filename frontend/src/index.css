@@ -411,3 +411,10 @@ a.action_container:link {
 .spinner{
   margin: 10% 0;
 }
+
+.addtobag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
