@@ -1,5 +1,6 @@
-const HomeItem = ({ item }) => {
+import { useSelector } from "react-redux";
 
+const HomeItem = ({ item }) => {
   return (
     <div className="item-container">
       <img className="item-image" src={item.image} alt="item image" />
